@@ -4,6 +4,7 @@ import { CSSTransition, TransitionGroup} from 'react-transition-group';
 import { connect } from "react-redux";
 
 import contactsOperations from '../redux/contacts/contactsOperations.js';
+import contactsSelectors from '../redux/contacts/contactsSelectors';
 
 import style from "./Contacts.module.css";
 
@@ -28,9 +29,9 @@ Contacts.propTypes = {
 }
 
 const mapStateToProps = state => {
-  const filteredNames = state.contacts.items.filter(contact => contact.name.toLowerCase().includes(state.contacts.filter.toLowerCase()) )
+  
   return {
-    contacts: filteredNames
+    contacts: contactsSelectors.filterContacts(state)
   }
 };
 const mapDispatchToProps = {
