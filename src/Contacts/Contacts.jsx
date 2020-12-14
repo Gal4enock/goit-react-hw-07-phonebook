@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup} from 'react-transition-group';
 import { connect } from "react-redux";
 
-import contactsActions from '../redux/contacts/contactsActions.js';
+import contactsOperations from '../redux/contacts/contactsOperations.js';
 
 import style from "./Contacts.module.css";
 
@@ -34,6 +34,6 @@ const mapStateToProps = state => {
   }
 };
 const mapDispatchToProps = {
-  onDelete: contactsActions.handleDelete,
+  onDelete: contactsOperations.removeContacts,
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Contacts);

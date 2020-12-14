@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Contacts from '../Contacts/Contacts';
 import ContactForm from '../ContactForm/ContactForm';
 import Filter from '../FilterContacts/FilterContacts';
+import contactsOperations from '../redux/contacts/contactsOperations'
 
 import Style from './App.module.css'
 
 
-const App = function () {
-    
+class App extends Component {
+
+  componentDidMount() {
+    this.props.toFetchContacts()
+  }
+  
+  render() {
+    console.log(this.props);
     return (
       <div className={Style.Container}>
         
@@ -18,8 +26,12 @@ const App = function () {
         <Filter />
         <Contacts />
       </div>
-    )
+    )}
   
 }
 
-export default App;
+const mapDispatchToProps = {
+  toFetchContacts: contactsOperations.fetchContacts
+}
+
+export default connect(null, mapDispatchToProps)(App);

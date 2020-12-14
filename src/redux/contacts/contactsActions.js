@@ -6,19 +6,15 @@ const addContactsRequest = createAction('contacts/addRequest');
 const addContactsSuccess = createAction('contacts/addSuccess');
 const addContactsError = createAction('contacts/addError');
 
-// const addContacts = createAction('contact/add', (name, number) => {
-//   return {
-//     payload: {
-//       contact: {
-//         name,
-//         id: uuidv4(),
-//         number
-//       }
-//     }
-//   }
-// })
+const fetchContactsRequest = createAction('contacts/fetchRequest');
+const fetchContactsSuccess = createAction('contacts/fetchSuccess');
+const fetchContactsError = createAction('contacts/fetchError');
 
-const handleDelete = createAction('contact/del', nameId => ({payload: {id: nameId}}))
+const removeContactsRequest = createAction('contacts/removeRequest');
+const removeContactsSuccess = createAction('contacts/removeSuccess');
+const removeContactsError = createAction('contacts/removeError');
+
+// const handleDelete = createAction('contact/del', nameId => ({payload: {id: nameId}}))
 
 const handleFilter = createAction('contact/filter', filter=> ({payload: {filter}}) )
 
@@ -27,6 +23,11 @@ export default {
   addContactsRequest,
   addContactsSuccess,
   addContactsError,
-  handleDelete,
-  handleFilter
+  handleFilter,
+  fetchContactsRequest,
+  fetchContactsSuccess,
+  fetchContactsError,
+  removeContactsRequest,
+  removeContactsSuccess,
+  removeContactsError
 }

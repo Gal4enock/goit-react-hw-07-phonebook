@@ -10,11 +10,12 @@ const toAddContact = (state, action) => {
     }
   return [...state, action.payload];
 }
-const toFilterContact = (state, action) => state.filter(contact => contact.id !== action.payload.id);
+const toFilterContact = (state, action) => state.filter(contact => contact.id !== action.payload);
 
 const items = createReducer([], {
+  [contactsActions.fetchContactsSuccess]: (state, action) => action.payload,
   [contactsActions.addContactsSuccess]: toAddContact,
-  [contactsActions.handleDelete.type]: toFilterContact
+  [contactsActions.removeContactsSuccess]: toFilterContact
 })
 
 
