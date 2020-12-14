@@ -6,14 +6,19 @@
       "id": 2
     },
     {
-      "name": "Rosie Simpson",
-      "number": "433-02-90",
-      "id": 3
-    },
-    {
       "name": "Kattie Roberts",
       "number": "242-34-00",
       "id": 4
+    },
+    {
+      "name": "Slim Shady",
+      "number": "123-45-69",
+      "id": 5
+    },
+    {
+      "name": "Rosie Simpson",
+      "number": "433-02-90",
+      "id": 6
     }
   ]
 }

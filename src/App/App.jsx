@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import Contacts from '../Contacts/Contacts';
 import ContactForm from '../ContactForm/ContactForm';
 import Filter from '../FilterContacts/FilterContacts';
-import contactsOperations from '../redux/contacts/contactsOperations'
+import contactsOperations from '../redux/contacts/contactsOperations';
+import contactsSelectors from '../redux/contacts/contactsSelectors';
 
 import Style from './App.module.css'
 
@@ -16,7 +17,6 @@ class App extends Component {
   }
   
   render() {
-    console.log(this.props);
     return (
       <div className={Style.Container}>
         
@@ -30,8 +30,12 @@ class App extends Component {
   
 }
 
+const mapStateToProps = state => ({
+  isLoadingContacts: contactsSelectors.getLoading(state)
+})
+
 const mapDispatchToProps = {
   toFetchContacts: contactsOperations.fetchContacts
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

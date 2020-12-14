@@ -14,7 +14,6 @@ const removeContactsRequest = createAction('contacts/removeRequest');
 const removeContactsSuccess = createAction('contacts/removeSuccess');
 const removeContactsError = createAction('contacts/removeError');
 
-// const handleDelete = createAction('contact/del', nameId => ({payload: {id: nameId}}))
 
 const handleFilter = createAction('contact/filter', filter=> ({payload: {filter}}) )
 
