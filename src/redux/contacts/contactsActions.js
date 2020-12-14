@@ -2,6 +2,10 @@ import { createAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 // import constants from '../constants.js';
 
+const addContactsRequest = createAction('contacts/addRequest');
+const addContactsSuccess = createAction('contacts/addSuccess');
+const addContactsError = createAction('contacts/addError');
+
 const addContacts = createAction('contact/add', (name, number) => {
   return {
     payload: {
@@ -20,6 +24,9 @@ const handleFilter = createAction('contact/filter', filter=> ({payload: {filter}
 
 
 export default {
+  addContactsRequest,
+  addContactsSuccess,
+  addContactsError,
   addContacts,
   handleDelete,
   handleFilter
