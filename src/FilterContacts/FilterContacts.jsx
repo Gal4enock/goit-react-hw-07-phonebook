@@ -20,7 +20,8 @@ Filter.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  value: state.contacts.filter
+  value: contactsSelectors.getFilter(state)
+
 })
 
 const mapDispatchToProps = {
