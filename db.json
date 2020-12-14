@@ -1,3 +1,29 @@
 {
-  "contacts": []
+  "contacts": [
+    {
+      "name": "Rosie Simpson",
+      "number": "433-02-90",
+      "id": 1
+    },
+    {
+      "name": "Galina Khyzhynska",
+      "number": "0503259485",
+      "id": 2
+    },
+    {
+      "name": "Katie Robson",
+      "number": "242-34-00",
+      "id": 3
+    },
+    {
+      "name": "Katie Robson",
+      "number": "242-34-00",
+      "id": 4
+    },
+    {
+      "name": "Katie Robson",
+      "number": "242-34-00",
+      "id": 5
+    }
+  ]
 }

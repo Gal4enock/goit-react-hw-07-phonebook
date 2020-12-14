@@ -3,17 +3,17 @@ import { createReducer } from '@reduxjs/toolkit';
 import contactsActions from './contactsActions.js';
 
 const toAddContact = (state, action) => {
-  const doubleName = state.find(el => el.name === action.payload.contact.name);
+  const doubleName = state.find(el => el.name === action.payload.name);
     if (doubleName) {
-      alert(`${action.payload.contact.name} is already in contacts`);
+      alert(`${action.payload.name} is already in contacts`);
       return
     }
-  return [...state, action.payload.contact];
+  return [...state, action.payload];
 }
 const toFilterContact = (state, action) => state.filter(contact => contact.id !== action.payload.id);
 
 const items = createReducer([], {
-  [contactsActions.addContacts.type]: toAddContact,
+  [contactsActions.addContactsSuccess]: toAddContact,
   [contactsActions.handleDelete.type]: toFilterContact
 })
 

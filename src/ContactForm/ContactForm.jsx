@@ -43,7 +43,7 @@ class ContactForm extends Component {
 const mapDispatchToProps = dispatch => {
   // const { name, number } = this.state
   return {
-    toAddContacts: (name, number) => dispatch(contactsOperations.addContacts(name, number)),
+    toAddContacts: (name, number) => dispatch(contactsOperations.AddContacts(name, number)),
   }
 }
 export default connect(null, mapDispatchToProps)(ContactForm);
